@@ -1,19 +1,19 @@
 import random
 
-target_num = random.randint(-100, 100)
+target_num = int(input("Enter the integer for the player to guess.\n"))
 num_guesses = 0
 
-print("Enter the integer for the player to guess.")
-print(target_num)
-
 while True:
+    guess = int(input("Enter your guess.\n"))
     num_guesses += 1
-    guess = int(input("Enter your guess: "))
 
-    if guess > target_num:
-        print("Too high - try again.")
-    elif guess < target_num:
-        print("Too low - try again.")
-    else:
-        print("You guessed it in", num_guesses, "tries.")
+    if guess == target_num:
+        if num_guesses == 1:
+            print("You guessed it in 1 try.")
+        else:
+            print("You guessed it in", num_guesses, "tries.")
         break
+    elif guess > target_num:
+        print("Too high - try again:")
+    else:
+        print("Too low - try again:")
