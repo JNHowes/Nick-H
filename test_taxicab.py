@@ -1,3 +1,9 @@
+# Author: Nick Howes
+# GitHub username: JNHowes
+# Date:May 3, 2023
+# Description: Taxicab with three private data members:
+# 1. Current X coordinate, 2. Current Y coordinate, 3. Current Odometer.
+
 def __init__(self, x_coord, y_coord):
     """Initialize the taxicab object with the given x and y coordinates, and initialize odometer to zero."""
     self._x_coord = x_coord
@@ -30,4 +36,3 @@ def move_y(self, distance):
     """Move the taxicab by the given distance along the y-axis (positive for up, negative for down)."""
     self._y_coord += distance
     self._odometer += abs(distance)
-
