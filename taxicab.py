@@ -17,9 +17,9 @@ class Taxicab:
         x_coord (int): The initial x-coordinate.
         y_coord (int): The initial y-coordinate.
         """
-        self.__x_coord = x_coord
-        self.__y_coord = y_coord
-        self.__odometer = 0
+        self._x_coord = x_coord
+        self._y_coord = y_coord
+        self._odometer = 0
 
     def get_x_coord(self):
         """
@@ -28,7 +28,7 @@ class Taxicab:
         Returns:
         int: The current x-coordinate.
         """
-        return self.__x_coord
+        return self._x_coord
 
     def get_y_coord(self):
         """
@@ -37,7 +37,7 @@ class Taxicab:
         Returns:
         int: The current y-coordinate.
         """
-        return self.__y_coord
+        return self._y_coord
 
     def get_odometer(self):
         """
@@ -46,7 +46,7 @@ class Taxicab:
         Returns:
         int: The current odometer reading.
         """
-        return self.__odometer
+        return self._odometer
 
     def move_x(self, distance):
         """
@@ -56,8 +56,9 @@ class Taxicab:
         distance (int): The distance to move the taxicab. Positive values move the taxicab right,
                         while negative values move the taxicab left.
         """
-        self.__x_coord += distance
-        self.__odometer += abs(distance)
+        if distance != 0:
+            self._x_coord += distance
+            self._odometer += abs(distance)
 
     def move_y(self, distance):
         """
@@ -67,5 +68,6 @@ class Taxicab:
         distance (int): The distance to move the taxicab. Positive values move the taxicab up,
                         while negative values move the taxicab down.
         """
-        self.__y_coord += distance
-        self.__odometer += abs(distance)
+        if distance != 0:
+            self._y_coord += distance
+            self._odometer += abs(distance)
