@@ -14,19 +14,29 @@ class Person:
 
 
 def std_dev(person_list):
-    if not person_list:
+    """
+    Calculate the population standard deviation of the ages of a list of Person objects.
+
+    Args:
+        person_list (list): A list of Person objects.
+
+    Returns:
+        float: The population standard deviation of the ages, or None if the list is empty.
+    """
+    if len(person_list) == 0:
         return None
 
-    # calculate the mean
-    n = len(person_list)
-    age_sum = sum([p.get_age() for p in person_list])
-    mean = age_sum / n
+    age_sum = 0
+    for person in person_list:
+        age_sum += person.get_age()
+    age_mean = age_sum / len(person_list)
 
-    # calculate the sum of squares of deviations from the mean
-    deviations_sum = sum([(p.get_age() - mean) ** 2 for p in person_list])
+    variance_sum = 0
+    for person in person_list:
+        variance_sum += (person.get_age() - age_mean) ** 2
+    variance = variance_sum / len(person_list)
 
-    # calculate the variance and standard deviation
-    variance = deviations_sum / n
-    std_dev = variance ** 0.5
+    std_deviation = variance ** 0.5
 
-    return std_dev
+    return std_deviation
+
