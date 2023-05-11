@@ -16,11 +16,11 @@ class Person:
 def std_dev(person_list):
     if not person_list:
         return None
-    ages = [person.get_age() for person in person_list]
-    n = len(ages)
-    mean = sum(ages) / n
-    variance = sum((x - mean) ** 2 for x in ages) / n
+    n = len(person_list)
+    mean_age = sum(person.get_age() for person in person_list) / n
+    variance = sum((person.get_age() - mean_age) ** 2 for person in person_list) / n
     return variance ** 0.5
+
 
 
 
