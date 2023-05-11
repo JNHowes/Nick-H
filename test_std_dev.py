@@ -6,11 +6,11 @@
 
 class Person:
     def __init__(self, name, age):
-        self.__name = name
-        self.__age = age
+        self._name = name
+        self._age = age
 
     def get_age(self):
-        return self.__age
+        return self._age
 
 
 def std_dev(person_list):
