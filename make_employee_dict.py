@@ -1,7 +1,8 @@
 # Author: Nick Howes
 # GitHub username: JNHowes
 # Date:May 24, 2023
-# Description:
+# Description: A class named Employee that has private data members for an employee's _name, _ID_number, _salary,
+# and _email_address.
 
 class Employee:
     def __init__(self, name, id_number, salary, email_address):

@@ -1,7 +1,8 @@
 # Author: Nick Howes
 # GitHub username: JNHowes
 # Date:May 24, 2023
-# Description:
+# Description: a function named words_in_both that takes two strings as parameters and returns a Python set containing
+# only those words that appear in both strings.
 
 def words_in_both(string1, string2):
     # Convert both strings to lowercase
