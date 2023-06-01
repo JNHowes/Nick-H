@@ -121,4 +121,6 @@ class LineSegment:
         Returns:
             bool: True if the line segments are parallel, False otherwise.
         """
+        if self.slope() is None and other_line_segment.slope() is None:
+            return True
         return abs(self.slope() - other_line_segment.slope()) < 0.000001
