@@ -62,6 +62,6 @@ class StreamingGuide:
             if movie_title in catalog:
                 movie = catalog[movie_title]
                 result = [f"{movie.get_title()} ({movie.get_year()})"]
-                result.extend([service.get_name() for service in catalog.values()])
+                result.extend([service.get_name() for service in self._streaming_services])
                 return result
         return None
